@@ -22,4 +22,4 @@ HYPER SBIを起動<br>
 
 # _
 
-https://user-images.githubusercontent.com/19276585/96873915-800bf900-14b0-11eb-9320-4240a57ffaf5.gif
+![demo](https://user-images.githubusercontent.com/19276585/96873915-800bf900-14b0-11eb-9320-4240a57ffaf5.gif)
