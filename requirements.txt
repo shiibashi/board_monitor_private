@@ -1,5 +1,6 @@
 opencv-python==4.1.2.30
 pillow==7.0.0
+pygame==1.9.6
 pyscreenshot==1.0
 pyocr==0.7.2
 keras==2.3.1
