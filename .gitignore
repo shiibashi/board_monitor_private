@@ -1,0 +1,12 @@
+.python-version
+*.ipynb_checkpoints
+*__pycache__
+tmp/*
+*.ipynb
+!model.hdf5
+*.csv
+*.mp4
+*.jpg
+script/daytra
+video_2020-03-23_Trim.gif
+video_2020-03-23_Trim.mp4
