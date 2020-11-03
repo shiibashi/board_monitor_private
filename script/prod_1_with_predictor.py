@@ -57,6 +57,7 @@ def main():
     wait()
     timing = rl.get_trade_timing()
     trade_hms = timing.pop(0)
+    trade_history = []
     for i in range(390*60):
         time.sleep(1)
         print(i)
@@ -87,8 +88,10 @@ def main():
                 
                 if rlbotter.status == "buy":
                     waver.sound(n=10)
+                    trade_history.append(hms)
 
         except Exception as e:
+            print("ERROR")
             pass
             
         #if not market_time():
@@ -102,7 +105,7 @@ def main():
     df_extracted = rlbotter.processed_to_extracted(df_processed, YMD)
     df_extracted.to_csv("daily_output/log_extracted_{}.csv".format(YMD), index=False)
     #os.system("shutdown -s -t 5")
-
+    print(trade_history)
 
 def wait():
     for i in range(390*60):
