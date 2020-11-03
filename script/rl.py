@@ -41,7 +41,7 @@ class RLBotter(object):
         ).assign(
             over_under=lambda df: df["over"] / df["under"],
             hms=lambda df: df["time"].apply(lambda x: x[11:])
-        ).query("'09-00-00' <= hms <= '11-30-00' or '12-30-00' <= hms")
+        ).query("'09-00-00' <= hms <= '11-30-00' or '12-30-00' <= hms").reset_index(drop=True)
         return df2
 
     def processed_to_extracted(self, df2, ymd):
