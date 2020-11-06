@@ -11,6 +11,7 @@ import pandas
 import predict
 import rl
 import waver
+import line_notify
 
 SHAPE =(1000, 810)
 FPS = 5
@@ -58,6 +59,7 @@ def main():
     timing = rl.get_trade_timing()
     trade_hms = timing.pop(0)
     trade_history = []
+    status = "sell"
     for i in range(390*60):
         time.sleep(1)
         print(i)
@@ -89,6 +91,11 @@ def main():
                 if rlbotter.status == "buy":
                     waver.sound(n=10)
                     trade_history.append(hms)
+                    status = "buy"
+                    line_notify.send("buy_2413_{}".format(t))
+                elif rlbotter.status == "sell" and status == "buy":
+                    status = "sell"
+                    line_notify.send("sell_2413_{}".format(t))
 
         except Exception as e:
             print("ERROR")

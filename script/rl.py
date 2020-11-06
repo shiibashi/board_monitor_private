@@ -57,7 +57,7 @@ class RLBotter(object):
         # response_data: {'action': 'buy', 'q_value': 0, 'buy_tau': 0, 'sell_tau': -0.005}
         r = rl_api_interface.rl_predict(feature, self.position)
         if (self.status == "sell" and r["action"] == "buy" and r["q_value"] >= r["buy_tau"])\
-        or (self.status == "buy" and r["q_value"] >= r["sell_tau"])\
+        or (self.status == "buy" and r["q_value"] > r["sell_tau"])\
         or 1 <= self.buy_count <= 5:
             self.status = "buy"
             self.position = [1]

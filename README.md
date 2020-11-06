@@ -9,6 +9,10 @@ https://bizlog.tech/windows-maxpath-change/<br>
 https://support.microsoft.com/ja-jp/help/2977003/the-latest-supported-visual-c-downloads
 でexeをインストール<br>
 
+環境変数に以下を追加<br>
+
+- LINE_TOKEN・・・LINE NOTIFYのtoken
+
 ```
 pip install tensorflow
 ```
